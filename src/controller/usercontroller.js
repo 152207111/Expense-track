@@ -11,7 +11,7 @@ const userregister = async (req, res) => {
 
     }
     if (password != confirmpassword) {
-        return res(400).json({ message: "Doesnot match password" });
+        return res.status(400).json({ message: "Doesnot match password" });
 
     }
     const user = await usermodel.findOne({ email: email });
