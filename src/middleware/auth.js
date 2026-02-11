@@ -4,7 +4,9 @@ import Env from "../config/envconfig.js";
 const auth=(req,res,next)=>{
 const token=req.cookies.token;
   if(!token){
-     return res.status(401).json({ message: "Token missing" });
+    return res.redirect('/login');
+
+     
   }
 //   const token=header.split("")[1];
   try{
